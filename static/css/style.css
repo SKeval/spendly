@@ -534,6 +534,79 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ------------------------------------------------------------------ */
+/* Video modal                                                         */
+/* ------------------------------------------------------------------ */
+
+.video-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-modal.is-open {
+    display: flex;
+}
+
+.video-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.video-modal-box {
+    position: relative;
+    z-index: 201;
+    width: 90%;
+    max-width: 800px;
+    background: var(--ink);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+
+.video-modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 202;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.video-modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.video-modal-frame {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.video-modal-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ------------------------------------------------------------------ */
 /* Terms / Privacy pages                                               */
 /* ------------------------------------------------------------------ */
 
